@@ -4,10 +4,25 @@
 
 }
 
-body {
+body{
     background-image: linear-gradient( to bottom, #19bc9c, #2c3d4f);
     background-repeat: no-repeat;
-    height: 960px;
+    height: 100vh;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+.container__button{
+    display: flex;
+    align-items: center;
+}
+.listForm {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    background-color: transparent;
+    transition: all ease .3s;
 
 }
 #QAcode {
@@ -46,20 +61,22 @@ body {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     bottom: -1px;
+    z-index: 10;
 }
 .container {
     max-width: 33.3333%;
     display: block;
     margin: 0 auto;
     margin-top: 10%;
-    background: #f1f1f1;
-    height: 50%;
+    background: #fff;
+    height: 70%;
     border-radius: 10px;
-    /* display: none; */
+    overflow: hidden;
 }
 form {
     display: flex;
     height: 100%;
+    width: 33.3333%;
 }
 .container__left, .container__right {
     flex: 1;
@@ -71,6 +88,7 @@ form {
     display: block;
     margin: 0 auto;
     margin-top: 8%;
+    position: relative;
     margin-bottom: 2%;
 }
 .container__right--QAcode img {
@@ -119,6 +137,7 @@ form {
     padding-top: 1%;
     margin: 0 auto;
     cursor: pointer;
+    margin-top: 5%;
 }
 .btn:hover {
     background-color: rgba(25, 188, 156, .8);
@@ -135,25 +154,6 @@ form {
     color: rgb(220, 78, 78);
 }
 
-#forgetCMND:checked~.container{
-    display: none;
-}
-#forgetCMND:checked~.wrapper {
-    transform: scale(1);
-}
-
-.wrapper {
-    max-width: 33.3333%;
-    display: block;
-    margin: 0 auto;
-    margin-top: 10%;
-    background: #fff;
-    height: 50%;
-    border-radius: 10px;
-    overflow: hidden;
-    transform: scale(0);
-    position: relative;
-}
 .form__input {
     display: flex;
     flex-direction: column;
@@ -207,51 +207,18 @@ form {
     width: 80%;
     margin: 0 auto;
 }
-.btn--next {
-    margin-top: 5%;
-}
 .note p {
     font-size: 12px;
     color: red;
     text-align: center;
 }
 
-.form__wrapper--diffirent {
-    max-width: 33.3333%;
-    display: block;
-    margin: 0 auto;
-    margin-top: 10%;
-    background: #fff;
-    height: 50%;
-    border-radius: 10px;
-    overflow: hidden;
-    transform: scale(0);
-    position: relative;
-}
-.btn--previous {
-    position: absolute;
-    top: 2%;
-    left: 1%;
-}
-.btn--previous i {
-    font-size: 32px;
-    opacity: 0.3;
-    cursor: pointer;
-}
 .btn--previous i:hover {
     opacity: 1;
 }
 
 .form__wrapper--diffirent form .container__left .form__input {
     margin-top: 10%;
-}
-
-#nextForm:checked~.wrapper {
-    display: none;
-}
-#nextForm:checked~.form__wrapper--diffirent {
-    transform: scale(1);
-    transition: all ease-in .3s;
 }
 
 #submit {
@@ -276,10 +243,77 @@ form {
     }
 }
 
+@media only screen and (max-width : 321px) {
+    .container {
+        max-width: 80%;
+    }
+    .wrapper {
+        max-width: 80%;
+    }
+    .form__wrapper--diffirent {
+        max-width: 80%;
+    }
+    .container__left--title {
+        margin-top: 40%;
+    }.container__right--QAcode {
+        margin: 15% 0;
+    }
+    .container__left--description {
+        margin-top: 10%;
+    }
+}
 
   /* Responsive */
 @media screen and (max-width: 600px) {
     .container {
         max-width: 80%;
     }
+    .container__left--title {
+        margin-top: 40%;
+    }
+    .container__right--QAcode {
+        margin: 15% auto;
+    }
+    .container__left--description {
+        margin-top: 10%;
+    }
+}
+@media only screen and (max-width : 768px) {
+    .container {
+        max-width: 80%;
+    }
+}
+@media only screen and (max-width : 1024px) {
+    .container {
+        max-width: 50%;
+    }
+}
+#turnOn:checked~.overlay{
+    display: block;
+}
+
+
+.preview {
+    /* width: 150px;
+    height: 150px; */
+    position: absolute;
+    top: -2%;
+    left: -2%;
+    z-index: 10;
+}
+.overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 5;
+    display: none;
+}
+.overlay .container__right--QAcode {
+    position: absolute;
+    top: 31.5%;
+    transform: translateY(-50%);
 }
