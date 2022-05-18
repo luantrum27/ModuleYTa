@@ -9,6 +9,8 @@ const inputDate = document.querySelector('input[name = "date"]');
 const inputQueQuan = document.querySelector('input[name = "queQuan"]');
 const inputNoiThuongTru = document.querySelector('input[name = "noiThuongTru"]');
 const date = new Date(2003, 06, 27);
+const formQA = document.getElementById('formQA');
+const formOverlay = document.getElementById('formOverlay');
 const preview = document.querySelector('.preview');
     function sleep(ms) {
         return new Promise(
@@ -26,6 +28,8 @@ const preview = document.querySelector('.preview');
     document.getElementById('turnOn').onclick = function(e){
         if (this.checked){
             overlay.style.display = 'block';
+            formQA.style.display = 'none';
+            formOverlay.style.display = 'block';
             sleep(5000)
                 .then(() => {
                     check = false;
