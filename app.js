@@ -28,8 +28,8 @@ const preview = document.querySelector('.preview');
     document.getElementById('turnOn').onclick = function(e){
         if (this.checked){
             overlay.style.display = 'block';
-            formQA.style.display = 'none';
-            formOverlay.style.display = 'block';
+            // formQA.style.display = 'none';
+            // formOverlay.style.display = 'block';
             sleep(5000)
                 .then(() => {
                     check = false;
