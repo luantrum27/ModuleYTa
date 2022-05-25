@@ -10,7 +10,6 @@ const inputQueQuan = document.querySelector('input[name = "queQuan"]');
 const inputNoiThuongTru = document.querySelector('input[name = "noiThuongTru"]');
 const date = new Date(2003, 06, 27);
 const formQA = document.getElementById('formQA');
-const formOverlay = document.getElementById('formOverlay');
 const preview = document.querySelector('.preview');
     function sleep(ms) {
         return new Promise(
@@ -28,8 +27,7 @@ const preview = document.querySelector('.preview');
     document.getElementById('turnOn').onclick = function(e){
         if (this.checked){
             overlay.style.display = 'block';
-            // formQA.style.display = 'none';
-            // formOverlay.style.display = 'block';
+            containerQA.style.display = 'none';
             sleep(5000)
                 .then(() => {
                     check = false;
@@ -41,6 +39,7 @@ const preview = document.querySelector('.preview');
                 })
                 .then(() => {
                     overlay.style.display = 'none';
+                    containerQA.style.display = 'block';
                     listForm.style.marginLeft = '-100%';
                     inputName.value = "HOÀNG THẾ LUÂN";
                     inputNoiThuongTru.value = "Thôn Hà Thượng, Xã Gio Châu, Huyện Gio Linh, Tỉnh Quảng Trị";

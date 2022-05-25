@@ -12,12 +12,12 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
 </head>
 <body>
-    <input type="checkbox" name="" id="turnOn" hidden >
+    <input type="checkbox" name="" id="turnOn" hidden>
     <label for="turnOn" class="overlay">
-        <div class="container__right--QAcode" id="QAcode">
-            <div class="col"></div>
-            <div class="row"></div>                        
-            <video width="148px" height="148px" class="preview"></video>
+        <div class="container__right--QAcode" style="width: 502px; height: 502px;" id="QAcode">
+            <div class="col" style="height: 505px; margin-top: -6px;"></div>
+            <div class="row" style="width: 505px; left: 4%;"></div>                        
+            <video width="500x" height="500px" class="preview"></video>
             <div class="QRline"></div>
         </div>
     </label>
@@ -38,9 +38,11 @@
                         <div class="row"></div>                        
                         <div class="QRline"></div>
                     </div>
-                    <div class="btn btn--QR" onclick="scannerQA()" style="cursor: pointer;">
-                        <label for="turnOn">Quét mã QR</label>
-                    </div>
+                    <label for="turnOn">
+                        <div class="btn btn--QR" onclick="scannerQA()" style="cursor: pointer;">
+                            Quét mã QR
+                        </div>
+                    </label>
                     <div class="container__left--description">
                         <label for="forgetCMND" id="labelForget"><u>Bạn quên không mang CMND/CCCD?</u></label>
                     </div>
