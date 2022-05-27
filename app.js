@@ -28,27 +28,6 @@ const preview = document.querySelector('.preview');
         if (this.checked){
             overlay.style.display = 'block';
             containerQA.style.display = 'none';
-            sleep(5000)
-                .then(() => {
-                    check = false;
-                    return sleep(0);
-                })
-                .then(() => {
-                    beep();
-                    return sleep(1500);
-                })
-                .then(() => {
-                    overlay.style.display = 'none';
-                    containerQA.style.display = 'block';
-                    listForm.style.marginLeft = '-100%';
-                    inputName.value = "HOÀNG THẾ LUÂN";
-                    inputNoiThuongTru.value = "Thôn Hà Thượng, Xã Gio Châu, Huyện Gio Linh, Tỉnh Quảng Trị";
-                    inputQueQuan.value = "Thôn Hà Thượng, Xã Gio Châu, Huyện Gio Linh, Tỉnh Quảng Trị";
-                    inputDate.valueAsDate = date;
-                    document.getElementById('male').checked = true;
-                })
-        }
-        else{
         }
     };
     function beep() {
@@ -60,10 +39,40 @@ const preview = document.querySelector('.preview');
         video: document.querySelector('.preview')
     });
     var check = false;
-
+    var contents;
     function scannerQA() {
                 scanner.addListener('scan', function(content) {
+                    contents = content
                     console.log(content);
+                    if(content != undefined) {
+                        sleep(0)
+                        .then(() => {
+                            beep();
+                            return sleep(1500);
+                        })
+                        .then(() => {
+                            overlay.style.display = 'none';
+                            containerQA.style.display = 'block';
+                            listForm.style.marginLeft = '-100%';
+                            inputName.value = "HOÀNG THẾ LUÂN";
+                            inputNoiThuongTru.value = "Thôn Hà Thượng, Xã Gio Châu, Huyện Gio Linh, Tỉnh Quảng Trị";
+                            inputQueQuan.value = "Thôn Hà Thượng, Xã Gio Châu, Huyện Gio Linh, Tỉnh Quảng Trị";
+                            inputDate.valueAsDate = date;
+                            document.getElementById('male').checked = true;
+                        })
+                    }
+                    else {
+                        sleep(10000)
+                            .then(() => {
+                                overlay.style.display = 'block';
+                                containerQA.style.display = 'none';
+                                return sleep(0)
+                            })
+                            .then(() => {
+                                overlay.style.display = 'none';
+                                containerQA.style.display = 'block';
+                            })
+                    }
                 });
             
                 Instascan.Camera.getCameras().then(function (cameras) {
@@ -76,8 +85,6 @@ const preview = document.querySelector('.preview');
                 }).catch(function(e){
                     alert(e);
                 });
-                
-        
     }
 
     

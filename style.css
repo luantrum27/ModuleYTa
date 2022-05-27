@@ -16,8 +16,9 @@ body{
     padding: 2.5% 0;
     width: 80%;
     margin: 2.5% auto 5% auto;
-    color: rgb(157, 157, 157);
+    color: #fff;
     cursor: pointer;
+    border-radius: 5px;
 }
 .nav__line {
     width: 100%;
@@ -27,7 +28,15 @@ body{
 }
 .account {
     margin-right: 5%;
+}
 
+.nav__title {
+    color: #fff;
+}
+
+.nav__logo {
+    display: flex;
+    width: 10%;
 }
 
 
@@ -38,10 +47,15 @@ body{
     border: 2px solid rgba(255, 255, 255, 0.5);
 
 }
+.nav__function, .nav__logo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 .nav__wrapper {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     position: fixed;
     top: 0;
     left: 0;
@@ -120,7 +134,6 @@ a {
     height: 100%;
     background-color: transparent;
     transition: all ease .3s;
-
 }
 #QAcode {
     border: 5px solid #2c3d4f;
@@ -235,9 +248,11 @@ form {
     margin: 0 auto;
     cursor: pointer;
     margin-top: 5%;
+    transition: all ease-in-out .2s;
+    border-radius: 4px;
 }
 .btn:hover {
-    background-color: rgba(25, 188, 156, .8);
+    background-color: #000;
 }
 .container__left--description label{
     text-align: center;
