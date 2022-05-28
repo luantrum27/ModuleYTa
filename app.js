@@ -11,6 +11,11 @@ const inputNoiThuongTru = document.querySelector('input[name = "noiThuongTru"]')
 const date = new Date(2003, 06, 27);
 const formQA = document.getElementById('formQA');
 const preview = document.querySelector('.preview');
+// const btnSubmit = document.querySelector('#submitBTN');
+// btnSubmit.onclick = () => {
+//     listForm.style.marginLeft = '0px';
+//     console.log(btnSubmit);
+// }
     function sleep(ms) {
         return new Promise(
             function(resolve) {
